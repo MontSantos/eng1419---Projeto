@@ -38,10 +38,10 @@ def telaAdd(canvas, jan):
     
     canvas = Canvas(jan, height = 480, width = 640, bg = "#575d6b")
         
-    nome = Label(canvas, text = "Nome: ", bg = "#a7b4c4", font=(None, 40))
+    nome = Label(canvas, text = "Nome: ", bg = "#a7b4c4", font=(None, 18))
     nome.place(x= 120, y = 120)
     
-    nmr = Label(canvas, text = "Número de pinos: ", bg = "#a7b4c4", font=(None, 40))
+    nmr = Label(canvas, text = "Número de pinos: ", bg = "#a7b4c4", font=(None, 18))
     nmr.place(x= 120, y = 160)
     
     global nomeEnt
@@ -98,11 +98,11 @@ def criaEnt(event, canvas):
             lstVal.pop(0)
             lstEnt.pop(0)
             
-    labelVal = Label(canvas, text = "Valor dos pinos: ", bg = "#a7b4c4", font=(None, 40))
+    labelVal = Label(canvas, text = "Valor dos pinos: ", bg = "#a7b4c4", font=(None, 18))
     labelVal.place(x= 120, y = 200)
     
     
-    labelEnt = Label(canvas, text = "Entrada: ", bg = "#a7b4c4", font=(None, 40))
+    labelEnt = Label(canvas, text = "Entrada: ", bg = "#a7b4c4", font=(None, 18))
     labelEnt.place(x= 120, y = 270)
     
     ok = Button(canvas, text = "Salvar", command = dataSave, bg = "#45429c",
@@ -185,16 +185,16 @@ def telaBanco(canvas, jan): #precisa implementar funcionalidade de carregamento,
     
     for i in range (0, 5):
     
-        nomeBanco = Label(canvas, text = "Nome: ", bg = "#a7b4c4", font=(None, 30))
+        nomeBanco = Label(canvas, text = "Nome: ", bg = "#a7b4c4", font=(None, 13))
         nomeBanco.place(x= 100, y = 85 + i*122)
         
-        pinoBanco = Label(canvas, text = "Número de pinos: ", bg = "#a7b4c4", font=(None, 30))
+        pinoBanco = Label(canvas, text = "Número de pinos: ", bg = "#a7b4c4", font=(None, 13))
         pinoBanco.place(x= 100, y = 115 + i*122)
         
-        valBanco = Label(canvas, text = "Valor dos pino: ", bg = "#a7b4c4", font=(None, 30))
+        valBanco = Label(canvas, text = "Valor dos pinos: ", bg = "#a7b4c4", font=(None, 13))
         valBanco.place(x= 100, y = 145 + i*122)
         
-        entBanco = Label(canvas, text = "Entrada: ", bg = "#a7b4c4", font=(None, 30))
+        entBanco = Label(canvas, text = "Entrada: ", bg = "#a7b4c4", font=(None, 13))
         entBanco.place(x= 100, y = 175 + i*122)
         
         editar = Button(canvas, text = "editar", command = lambda: None,
