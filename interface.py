@@ -1,13 +1,10 @@
 from tkinter import *
-import tkinter as tk
-import uni
 
-jan = Tk()
-canvas = Canvas()
+import uni
         
 def main():
     
-    uni.menu(canvas, jan)
+    uni.menu()
     
 
 main()
