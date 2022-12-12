@@ -3,6 +3,7 @@ from tkinter import messagebox
 from json import load
 import json
 import os
+import os.path
 import math
 
 
@@ -202,7 +203,6 @@ def dataSave(): #falta inserir no banco, porém é funcional
         
         
     dicionario = {"Nome": int(nomeEnt.get()), "Numero": int(nmrEnt.get()), "Entrada": entPin, "Teste": [valorPin]}
-
     with open("dados.txt", 'w') as json_file:
         dados.append(dicionario)
         dados = sorted(dados, key = lambda x:x["Nome"])
@@ -304,9 +304,13 @@ def loadBanco(canvas, bias):
     
 
 def leBanco():
-    with open("dados.txt", 'r') as file:
-        if (os.stat("dados.txt").st_size != 0):
-            return json.load(file)
+    
+    PATH = './dados.txt'
+    
+    if (os.path.isfile(PATH) and os.access(PATH, os.R_OK)):
+        with open("dados.txt", 'r') as file:
+            if (os.stat("dados.txt").st_size != 0):
+                return json.load(file)
     return []
 
 def checkEl(nome):
