@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from json import load
-from enviaBanco import *
+from enviaBanco import envia
 import json
 import os
 import os.path
@@ -231,7 +231,7 @@ def telaBanco(canvas, jan, bias): #precisa implementar funcionalidade de carrega
                     bg = "#45429c", fg='white', height = 1, width = 8)
     voltar.place(x = 100, y = 695)
     
-    enviar = Button(canvas, text = "Enviar", command = envia(),
+    enviar = Button(canvas, text = "Enviar", command = lambda: [envia()],
                     bg = "#45429c", fg = "white", height = 1, width = 8)
     enviar.place(x= 300, y = 695 +12, anchor = CENTER)
     
@@ -482,7 +482,7 @@ def loadEditar(ind, tk2, canvas2):
             lstVal.pop(len(lstVal)-1)
             
     for i in range (0, chip["Numero"]):
-        lstVal.append(Entry(canvas2, width = 2))
+        lstVal.append(Entry(tk2, width = 2))
         lstVal[i].place(x = 120 + i*20, y = 200)
         lstVal[i].bind("<KeyRelease>", lambda event: limVal(event, 0))
         
@@ -508,7 +508,6 @@ def saveEditar(ind):
     
     dicionario = dados[ind]
     dados.pop(ind)
-    print(dicionario)
     dicionario["Teste"].append(valorPin)
 
     
