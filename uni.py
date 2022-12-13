@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from json import load
+from enviaBanco import *
 import json
 import os
 import os.path
@@ -230,6 +231,11 @@ def telaBanco(canvas, jan, bias): #precisa implementar funcionalidade de carrega
                     bg = "#45429c", fg='white', height = 1, width = 8)
     voltar.place(x = 100, y = 695)
     
+    enviar = Button(canvas, text = "Enviar", command = envia(),
+                    bg = "#45429c", fg = "white", height = 1, width = 8)
+    enviar.place(x= 300, y = 695 +12, anchor = CENTER)
+    
+    
     canvas.create_rectangle(80, 80, 520, 730, fill = "#a7b4c4")
     
     canvas.pack(fill= BOTH, expand= True)
@@ -305,7 +311,7 @@ def loadBanco(canvas, bias):
 
 def leBanco():
     
-    PATH = './dados.txt'
+    PATH = "./dados.txt"
     
     if (os.path.isfile(PATH) and os.access(PATH, os.R_OK)):
         with open("dados.txt", 'r') as file:
@@ -339,9 +345,6 @@ def checkEl(nome):
     
     return None
 
-
-    
-    
 
 ############################################################################
 
